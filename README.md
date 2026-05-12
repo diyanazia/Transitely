@@ -1,42 +1,309 @@
-# Transitely MERN
+# Transitely – Smart Ride Sharing Platform
 
-Clean two-folder project:
+Transitely is a modern smart ride-sharing platform inspired by Uber, developed as a CSE327 Software Design Project. The system provides separate modules for Riders, Drivers, and Admins with both mobile and web-based applications.
 
-- `frontend/` -> Vite + React + Tailwind CSS
-- `backend/` -> Express + Socket.io + MongoDB (Mongoose)
+The project combines Flutter mobile development, Node.js backend services, and a React-based admin portal to create a complete transportation management ecosystem.
 
-Design assets from the old frontend are preserved in:
+---
 
-- `frontend/public/legacy/`
+# Features
 
-## Quick Start
+## Rider Features
 
-1. Create backend env:
+* Rider registration and login
+* OTP verification
+* Book rides in real time
+* View nearby drivers
+* Promo code discount system
+* Ride history tracking
+* Driver history visibility before booking
+* Rebook same driver functionality
+* 5% cashback for rebooking same driver
+* Ride fare estimation
+* In-app notifications
+* Payment management
+* Rating and review system
+
+---
+
+## Driver Features
+
+* Driver registration and authentication
+* Driver profile management
+* Upload driving documents
+* Online/offline availability control
+* Accept/reject ride requests
+* Ride completion tracking
+* Earnings overview
+* Ride history management
+* Driver verification system
+
+---
+
+## Admin Features
+
+* Admin dashboard
+* Manage riders and drivers
+* Verify driver documents
+* Monitor ride requests
+* Complaint management
+* Promo code management
+* Payment monitoring
+* Notification management
+* User activity monitoring
+
+---
+
+# Unique Features
+
+## 1. Promo Code Coupon System
+
+Transitely allows riders to apply promotional discount codes during ride booking.
+
+---
+
+## 2. Driver History Visibility
+
+The platform allows riders to view a driver's previous history and information before confirming a ride, improving transparency and safety.
+
+---
+
+## 3. Rebook Same Driver with Cashback
+
+Riders can rebook their preferred drivers and receive a 5% cashback reward.
+
+---
+
+# Project Architecture
+
+```text
+Transitely
+│
+├── backend        → Node.js + Express Backend API
+├── frontend       → React/Vite Admin Web Portal
+├── frontend_app   → Flutter Rider & Driver Mobile App
+```
+
+---
+
+# Technologies Used
+
+| Component             | Technology           |
+| --------------------- | -------------------- |
+| Mobile App            | Flutter              |
+| Frontend Admin Portal | React.js + Vite      |
+| Backend               | Node.js + Express.js |
+| Database              | MongoDB / MySQL      |
+| Authentication        | JWT + OTP            |
+| API Communication     | REST API             |
+| Mobile Language       | Dart                 |
+| Styling               | Tailwind CSS         |
+| Version Control       | Git + GitHub         |
+
+---
+
+# Folder Structure
+
+## backend/
+
+Contains:
+
+* Express server
+* API routes
+* Controllers
+* Database models
+* Middleware
+* Authentication logic
+* Ride booking logic
+* Payment processing
+* Driver assignment logic
+
+Main backend entry point:
+
+```text
+backend/src/app.js
+```
+
+---
+
+## frontend/
+
+Contains the Admin Web Portal.
+
+Built using:
+
+* React.js
+* Vite
+* Tailwind CSS
+
+Runs on browser.
+
+---
+
+## frontend_app/
+
+Contains Flutter mobile application.
+
+Used for:
+
+* Rider app
+* Driver app
+
+Main Flutter entry point:
+
+```text
+frontend_app/lib/main.dart
+```
+
+---
+
+# Installation Guide
+
+## 1. Clone Repository
 
 ```bash
-copy backend\\.env.example backend\\.env
+git clone https://github.com/diyanazia/Transitely.git
 ```
 
-2. Add your MongoDB URL in `backend/.env`:
+---
 
-```env
-MONGODB_URL=mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority
+# Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
 ```
 
-3. Run full stack:
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+---
+
+# Frontend Admin Portal Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# Flutter Mobile App Setup
+
+```bash
+cd frontend_app
+flutter pub get
+flutter run
+```
+
+---
+
+# Android Device Setup
+
+1. Enable Developer Options
+2. Enable USB Debugging
+3. Connect phone with USB
+4. Run:
+
+```bash
+flutter devices
+```
+
+5. Run app:
+
+```bash
+flutter run -d <device-id>
+```
+
+---
+
+# Backend API Connection for Physical Device
+
+When running on a real Android phone, replace:
+
+```dart
+http://localhost:5000
+```
+
+with:
+
+```dart
+http://YOUR_PC_IP:5000
+```
+
+Example:
+
+```dart
+http://192.168.0.122:5000
+```
+
+---
+
+# Important Commands
+
+## Backend
 
 ```bash
 npm run dev
 ```
 
-## Commands
+---
 
-- `npm run dev` -> frontend + backend together
-- `npm run dev:frontend` -> only frontend
-- `npm run dev:backend` -> only backend
+## Admin Portal
 
-## Notes
+```bash
+npm run dev
+```
 
-- Old HTML entry pages were removed and replaced with React Router JSX routes.
-- Frontend styling is Tailwind-based.
-- You can extend route pages in `frontend/src/App.jsx` (or split into page components).
+---
+
+## Flutter App
+
+```bash
+flutter run
+```
+
+---
+
+# White Box Testing
+
+White-box testing was conducted on:
+
+* Authentication module
+* OTP verification
+* Ride booking logic
+* Fare calculation
+* Driver assignment
+* Payment processing
+* Admin operations
+* Middleware authorization
+
+Testing techniques used:
+
+* Branch Coverage
+* Condition Coverage
+* Basis Path Testing
+* Cyclomatic Complexity Analysis
+
+
+---
+
+# Team Members
+1. Nazia Faruque Diya 
+2. Sadia Abedin Medha
+3. Suraiya Bintee Rashid
+
+---
+
+
